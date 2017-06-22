@@ -1,0 +1,86 @@
+{
+    "places": {
+        "start": {
+            "description": "The date is June 21, 1832. You live in a settlement on the west coast of North America called Fort Ross. 20 years ago, your fellow Russians completed the creation of this colony, and one year ago you moved here with the promise of new opportunities. Although you have lived at Fort Ross for a while, you haven't formed any real friendships. The people here seem to treat you as an outsider. Most days, you tend to your garden and wander around the town and surrounding areas. It is a bright and sunny morning and you are currently standing in the middle of town.Where will you walk?",
+            "instructions": "Say first option to go north to the chapel. Say 2 to go west to the general store. Say 3 to go south to the gate.",
+            "finished": false,
+            "choices": {
+                "1": [
+                    { "say": "You decide to head North to the chapel. It appears that others are heading there as well, as the morning service is just about to start. You enter the building and take a seat on a bench in the back row. There is a man sitting a few feet away from you on the bench, and he waves at you with a grin on his face. Alexei is an eccentric man who is also an outsider, much like yourself. After the service is over and most of the other people have left, Alexei leans over to you and whispers I have something for you. You might need it later. He then hands you a bible with something stuck in between the pages. You open the book and find a small iron cross. Before you can question him, Alexei has gone. You decide to leave the chapel and walk back to the center of town." },
+                    { "goto": "start" }
+                ],
+                "2": [
+                    { "goto": "general_store" }
+                ],
+                "hint": [
+                    { "say": "You get the feeling that if you stay here, you will not be for long..." }
+                ]
+            }
+        },
+        "general_store": {
+            "description": "There is nothing in particular that you need at the general store, but you decide to walk there anyway. You enter the modest building and the shopkeeper barely gives you a glance. Currently, you can see a few goods available for purchase: food rations, water skins, and knives.Will you purchase anything",
+            "instructions": "Say first option to purchase food. Say 2 to buy a water skin. Say 3 to but a knife. Say 4 to leave the store",
+            "finished": false,
+            "choices": {
+                "1": [
+                    { "say": "You purchase food rations"},
+                    { "goto": "general_store" }
+                ],
+                "2": [
+                    { "say": "You purchase a water skin"},
+                    { "goto": "end-room-good" }
+                ],
+                "3": [
+                    { "say": "You purchase a knife"},
+                    { "goto": "end-room-good" }
+                ],
+                "4": [
+                    { "say": "You decide to return to the center of town"},
+                    { "goto": "end-room-good" }
+                ],
+                "hint":[
+                    { "say": "You feel like you should return to the center of town." }
+                ]
+            }
+        },
+        "south":{
+            "description": "You walk south to the gate entrance in the fence. During the day it is opened and loosely guarded. You are able to pass through without notice. Outside the settlement, there is the main path which runs along the coast and a small path which leads to your house. Where will you walk?",
+            "instructions":" Say first option to walk along the coast. Say 2 to walk straight home",
+            "finished": false,
+            "choices": {
+                "1":[
+                    {"say":"You decide to take a walk down the coast"},
+                    {"goto":"coast"}
+                ],
+                "2":[
+                    {"say": "You decide to go straight home"},
+                    {"goto":"home"}
+                ]
+            }
+        },
+        "coast": {
+            "description": "You wander along the coastal path in one direction for a while. After a nice refreshing stroll, you decide to head back to where you started. On the way back, you catch a glimpse of a person entering your house. You decide to hurry toward your house to investigate. You shout \"Who's there?!\" as you burst through the door. You feel a sharp pain as something hits the back of your head and you become unconscious. You are dead.",
+            "instructions": "You may say \"restart\" to start over or say \"quit\" to end the adventure.",
+            "finished": true,
+            "choices": {
+                "restart": [
+                    { "say": "You feel like the world is beginning to spin around you." },
+                    { "pause": 0.5 },
+                    { "say": "And then it's gone!" }
+                ]
+            }
+        },
+        "home": {
+            "description": "You walk a short distance to your house. You decide to tend to your garden in the back, even though it is getting quite hot outside. Gardening is your livelihood here, and the only real skill that makes you valuable to the community. After a few hours of pulling weeds, you go back inside your house sweaty and exhausted. You lie down on the bed and quickly drift off to sleep. You do not wake up again, as you are dead.",
+            "instructions": "You may say \"restart\" to start over or say \"quit\" to end the adventure.",
+            "finished": true,
+            "choices": {
+                "restart": [
+                    { "say": "It feels like a hand is reaching out from the light and pulls you back." },
+                    { "pause": 0.5 },
+                    { "say": "And then..." }
+                ]
+            }
+        }
+    }
+}

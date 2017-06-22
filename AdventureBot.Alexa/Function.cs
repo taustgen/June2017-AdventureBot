@@ -202,6 +202,8 @@ namespace AdventureBot.Alexa {
                     ssml.Add(new XElement("p", new XText("Good bye.")));
                     break;
                 case GameResponseFinished _:
+                    var sns= new AmazonSimpleNotificationServiceClient();
+                    sns.PublishAsync("arn:aws:sns:us-west-2:769743987603:AdventureStats", $"Game Was Completed").Wait();
 
                     // TODO: player is done with the adventure
                     break;
